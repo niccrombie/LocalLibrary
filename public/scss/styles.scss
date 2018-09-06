@@ -1,0 +1,24 @@
+// Variable Overrides 
+$theme-colors: (
+    "primary": #7d3,
+    "secondary": #666,
+    
+);
+body {
+    background-image: url("../images/background.jpg");
+}
+nav {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+}
+.jumbotron {
+    background-image: url("../images/header2.jpg") !important;
+    background-size: cover;
+    border-top: 3px solid rgb(219, 219, 219);
+}
+.carousel {
+    border-top: 3px solid rgb(219, 219, 219);
+    min-height: 450px;
+}
+// Bootstrap Sass Imports
+@import "node_modules/bootstrap/scss/bootstrap";
