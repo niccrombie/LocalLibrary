@@ -12,7 +12,7 @@ var app = express();
 // mLab Connect
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://<dbuser>:<dbpassword>@ds149682.mlab.com:49682/locallibrary-nc';
+var mongoDB = 'mongodb://locallibrary:locallibrary123@ds149682.mlab.com:49682/locallibrary-nc';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
