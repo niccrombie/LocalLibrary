@@ -193,7 +193,7 @@ exports.book_delete_post = function(req, res, next) {
           Book.findById(req.params.id).exec(callback);
         },
         books_instance: function(callback) {
-          BookInstance.find({ 'book': req.body.id }).exec(callback)
+          BookInstance.find({ 'book': req.params.id }).exec(callback)
         },
     }, function(err, results) {
         if (err) { return next(err); }
