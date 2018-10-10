@@ -88,7 +88,7 @@ exports.book_create_get = function(req, res, next) {
         res.render('book_form', { title: 'Create Book', authors: results.authors, genres: results.genres });
     });
     
-};
+};//qwerty
 
 // Handle book create on POST.
 exports.book_create_post = [
