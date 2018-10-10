@@ -6,17 +6,26 @@ block content
   
   if book_instances.length
   
-    p #[strong Delete the following instances before attempting to delete this author.]
+    p #[strong Delete the following instances before attempting to delete this book.]
   
     div(style='margin-left:20px;margin-top:20px')
 
       h4 Instances
     
-      dl
-      each book in books_instance
-        dt 
-          a(href=book.url) #{book.title}
-        dd #{book.summary}
+        each book in book_instances
+          hr
+          if book.status=='Available'
+            p.text-success #{book_.status}
+          else if book.status=='Maintenance'
+            p.text-danger #{book.status}
+          else
+            p.text-warning #{book.status} 
+          p #[strong Imprint:] #{book.imprint}
+          if book.status!='Available'
+            p #[strong Due back:] #{book.due_back}
+          p #[strong Id:] 
+            a(href=book.url) #{book._id}
+
 
   else
     p Do you really want to delete this Book?

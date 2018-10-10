@@ -164,11 +164,9 @@ exports.bookinstance_update_post = [
                 _id: req.params.id
                });
         if (!errors.isEmpty()) {
-            // There are errors so render the form again, passing sanitized values and errors.
             Book.find({},'title')
                 .exec(function (err, books) {
                     if (err) { return next(err); }
-                    // Successful, so render.
                     res.render('bookinstance_form', { title: 'Update BookInstance', book_list : books, selected_book : bookinstance.book._id , errors: errors.array(), bookinstance:bookinstance });
             });
             return;
