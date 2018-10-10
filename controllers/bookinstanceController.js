@@ -155,6 +155,7 @@ exports.bookinstance_update_post = [
     sanitizeBody('status').trim().escape(),
     sanitizeBody('due_back').toDate(),
     (req, res, next) => {
+        const errors = validationResult(req);
         var bookinstance = new BookInstance(
               { book: req.body.book,
                 imprint: req.body.imprint,
